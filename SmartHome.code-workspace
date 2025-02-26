@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "SmartHome",
+			"path": "SmartHome"
+		},
+		{
+			"name": "ESP32__002",
+			"path": "ESP32_002/ESP32__002"
+		},
+		{
+			"name": "ESP32_003",
+			"path": "ESP32_003"
+		},
+		{
+			"name": "LED_Makrolampe_2",
+			"path": "../Macrolampe/LED_Makrolampe_2"
+		}
+	],
+	"settings": {}
+}
