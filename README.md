@@ -1,67 +1,44 @@
 # SmartHome - MongoDB & MQTT Integration
 
 ## ✨ Projektbeschreibung
-Dieses Projekt zielt darauf ab, eine SmartHome-Lösung zu entwickeln, die auf einer **MongoDB** zur Speicherung von Sensordaten und einem **MQTT-Broker** zur Kommunikation zwischen den Geräten basiert. 
+SmartHome Projekt welches die Bodenfeuchtigkeit meiner Pflanzen misst, die Temperatur und Luftfeuchtigkeit an verschiedenen Stellen im Haus, sowie dem Balkon ermittelt und einen Badventilator basierend auf der Luftfeuchtigkeit ein und ausschaltet. Weiterhin sollen demnächst automatisch die Pflanzen bewässert werden und eine Klappe zum Schornstein im Bad für die Abluft geöffnet werden. 
 
 ## 🛠 Installation & Einrichtung
 ### Voraussetzungen
-- Node.js & npm
-- MongoDB (lokal oder in der Cloud)
-- MQTT-Broker (z. B. Mosquitto oder HiveMQ)
+- MongoDB ist als noSQL Datenbank gewählt und läuft auf dem Raspberry pi
+- MQTT-Broker ist als Kommunikationsmittel zwischen den einzelnen Teilnehmern im Einsatz. Der Broker läuft auf dem Raspberri Pi
 
 ### Installation
-1. **Repository klonen**
-   ```sh
-   git clone https://github.com/dein-benutzername/dein-repository.git
-   cd dein-repository
-   ```
 
-2. **Abhängigkeiten installieren**
-   ```sh
-   npm install
-   ```
-
-3. **Konfigurationsdatei anpassen**
-   Erstelle eine `.env` Datei mit den folgenden Parametern:
-   ```env
-   MONGO_URI=mongodb://localhost:27017/smarthome
-   MQTT_BROKER=mqtt://192.168.x.x:1883
    ```
 
 4. **Server starten**
-   ```sh
-   npm start
-   ```
+- node-red startet den Server auf dem Raspberry pi
+- unter der IP: 192.168.... erreichbar 
 
 ## 📝 Features
 - Speicherung und Abruf von Sensordaten in einer MongoDB-Datenbank
-- Kommunikation über einen MQTT-Broker
-- Skalierbare Architektur für zukünftige Erweiterungen
-- Dashboard-Integration für Visualisierung (geplant)
+- Kommunikation über einen MQTT-Broker 
+- Dashboard-Integration für Visualisierung über NodeRed, Zugriff über mehrere Geräte
 
 ## 🏆 Ziele
-- Einfache Einrichtung und Erweiterbarkeit
-- Echtzeit-Kommunikation zwischen IoT-Geräten
-- Effiziente Datenverwaltung durch MongoDB
+- Überwachung der Bodenfeuchtigkeit der Pflanzen
+- Überwachung der Lufttemperatur und Luftfeuchtigkeit
+- kontrolle des Badventilators basierend auf der aktuellen Luftfeuchtigkeit
 
 ## ⚡ Nutzung
-Nach der Installation kann das Projekt gestartet werden, um Sensordaten von MQTT-Clients zu empfangen und in der MongoDB-Datenbank zu speichern. 
+Aufrufen des NodeRed Dashboards und einsehen der Livedaten sowie der Daten aus der Vergangenheit. Zeitraum kann in 1h Schritten bis zu 24h in die Vergangenheit gewählt werden.
 
-## 💎 Mitwirkende
-- **Dein Name** - Entwicklung & Wartung
-- Beiträge sind willkommen! 
 
-## 📝 Lizenz
-Dieses Projekt steht unter der **MIT-Lizenz**.
 
 ## 🔄 Nächste Schritte
-- Entwicklung eines Frontends zur Visualisierung der Sensordaten
-- Implementierung einer Benutzerverwaltung für den Zugriff
-- Optimierung der MQTT-Message-Handling-Performance
-- Automatische Alarmierung bei definierten Sensorschwellen
+- Testen der Hard und Software für den Ventilator
+- einbinden einer Klappe im Bad, die automatisch geöffnet und geschlossen wird, basierend auf dem Zustand des Ventilators
+- implementierung einer Automatischen Bewässerung basierend auf den jeweiligen Bodenfeuchtigkeitswerten
+- implementierung für das Einstellen des Schwellenwertes über NodeRed für die Soll Bodenfeuchtigkeit
 
 ## 🛠 Aktuelle Probleme
-- Stabilität des MQTT-Brokers bei hoher Nachrichtenfrequenz
-- Optimierung der Datenbankabfragen für bessere Performance
-- Sicherstellung einer zuverlässigen Fehlerbehandlung bei Netzwerkproblemen
-
+- hohe Ladezeiten für das NodeRed Dashboard aufgrund zu hoher Datenabfragen an die Datenbank
+- Zeitraum für die Vergangenen Messdaten nicht optimal einstellbar
+- Schwellewert lässt sich nicht gut zuverlässig über das Dashboard einstellen
+- 
