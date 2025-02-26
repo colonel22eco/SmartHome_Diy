@@ -10,7 +10,6 @@ SmartHome Projekt welches die Bodenfeuchtigkeit meiner Pflanzen misst, die Tempe
 
 ### Installation
 
-   ```
 
 4. **Server starten**
 - node-red startet den Server auf dem Raspberry pi
